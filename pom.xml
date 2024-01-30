@@ -54,7 +54,7 @@
 				<configuration>
 					<includes>
 						<include>
-							edu.iu.bolabanj.c322spring2024homework2.repository.C322spring2024homework2ApplicationTests
+							edu.iu.bolabanj.c322spring2024homework2.repository.C322Spring2024Homework2ApplicationTests
 						</include>
 					</includes>
 					<excludes>
