@@ -1,5 +1,8 @@
 package edu.iu.bolabanj.c322spring2024homework2.controllers;
 
+import edu.iu.bolabanj.c322spring2024homework2.enums.Builder;
+import edu.iu.bolabanj.c322spring2024homework2.enums.Type;
+import edu.iu.bolabanj.c322spring2024homework2.enums.Wood;
 import edu.iu.bolabanj.c322spring2024homework2.model.Guitar;
 import edu.iu.bolabanj.c322spring2024homework2.respository.InventoryRepository;
 import org.springframework.web.bind.annotation.*;
@@ -9,7 +12,7 @@ import java.util.List;
 public class InventoryController {
     private InventoryRepository inventoryRepository;
     @GetMapping("/search")
-    public List<Guitar> search(String serialNumber, double price, String builder, String model, String type, String backWood, String topWood) throws Exception{
+    public List<Guitar> search(String serialNumber, double price, Builder builder, String model, Type type, Wood backWood, Wood topWood) throws Exception{
         try{
             Guitar searchGuitar = new Guitar(serialNumber, price, builder, model, type, backWood, topWood);
             return inventoryRepository.search(searchGuitar);
@@ -22,7 +25,7 @@ public class InventoryController {
     }
 
     @PostMapping("/add")
-    public void add(String serialNumber, double price,  String builder, String model, String type, String backWood, String topWood){
+    public void add(String serialNumber, double price,  Builder builder, String model, Type type, Wood backWood, Wood topWood){
         try{
             Guitar newGuitar = new Guitar(serialNumber, price, builder, model, type, backWood, topWood);
             inventoryRepository.addGuitar(newGuitar);
