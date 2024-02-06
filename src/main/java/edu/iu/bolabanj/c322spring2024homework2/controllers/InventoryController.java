@@ -8,11 +8,12 @@ import edu.iu.bolabanj.c322spring2024homework2.respository.InventoryRepository;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
+@RestController
+@RequestMapping("/inventory")
 public class InventoryController {
     private InventoryRepository inventoryRepository;
     @GetMapping("/search")
-    public List<Guitar> search(String serialNumber, double price, Builder builder, String model, Type type, Wood backWood, Wood topWood) throws Exception{
+    public List<Guitar> search(@RequestParam String serialNumber,@RequestParam double price,@RequestParam Builder builder,@RequestParam String model,@RequestParam Type type,@RequestParam Wood backWood,@RequestParam Wood topWood) throws Exception{
         try{
             Guitar searchGuitar = new Guitar(serialNumber, price, builder, model, type, backWood, topWood);
             return inventoryRepository.search(searchGuitar);
@@ -25,7 +26,7 @@ public class InventoryController {
     }
 
     @PostMapping("/add")
-    public void add(String serialNumber, double price,  Builder builder, String model, Type type, Wood backWood, Wood topWood){
+    public void add(@RequestBody String serialNumber,@RequestBody double price,@RequestBody  Builder builder,@RequestBody String model,@RequestBody Type type,@RequestBody Wood backWood,@RequestBody Wood topWood){
         try{
             Guitar newGuitar = new Guitar(serialNumber, price, builder, model, type, backWood, topWood);
             inventoryRepository.addGuitar(newGuitar);
