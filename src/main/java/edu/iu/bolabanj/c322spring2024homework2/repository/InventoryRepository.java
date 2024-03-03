@@ -1,5 +1,8 @@
-package edu.iu.bolabanj.c322spring2024homework2.respository;
+package edu.iu.bolabanj.c322spring2024homework2.repository;
 
+import edu.iu.bolabanj.c322spring2024homework2.enums.Builder;
+import edu.iu.bolabanj.c322spring2024homework2.enums.Type;
+import edu.iu.bolabanj.c322spring2024homework2.enums.Wood;
 import edu.iu.bolabanj.c322spring2024homework2.model.Guitar;
 
 import java.io.File;
@@ -38,7 +41,36 @@ public class InventoryRepository {
             while(scanner.hasNextLine()){
                 String line = scanner.nextLine();
                 String[] guitar = line.split(",");
-                Guitar guitar1 = new Guitar(guitar[0], Double.parseDouble(guitar[1]), guitar[2], guitar[3], guitar[4], guitar[5], guitar[6]);
+                Guitar guitar1 = null;
+                Builder builder = switch (guitar[2]) {
+                    case "Fender" -> Builder.FENDER;
+                    case "Martin" -> Builder.MARTIN;
+                    case "Gibson" -> Builder.GIBSON;
+                    case "Collings" -> Builder.COLLINGS;
+                    case "Olson" -> Builder.OLSON;
+                    case "Ryan" -> Builder.RYAN;
+                    case "PRS" -> Builder.PRS;
+                    default -> Builder.ANY;
+                };
+                Type type = switch (guitar[4]) {
+                    case "Acoustic" -> Type.ACOUSTIC;
+                    case "Electric" -> Type.ELECTRIC;
+
+                    default -> Type.ACOUSTIC;
+                };
+                Wood wood = switch (guitar[5]) {
+                    case "Indian Rosewood" -> Wood.INDIAN_ROSEWOOD;
+                    case "Brazilian Rosewood" -> Wood.BRAZILIAN_ROSEWOOD;
+                    case "Mahogany" -> Wood.MAHOGANY;
+                    case "Cocobolo" -> Wood.COCOBOLO;
+                    case "Cedar" -> Wood.CEDAR;
+                    case "Adirondack" -> Wood.ADIRONDACK;
+                    case "Alder" -> Wood.ALDER;
+                    case "Sitka" -> Wood.SITKA;
+
+                    default -> Wood.MAPLE;
+                };
+                guitar1 = new Guitar(guitar[0], Double.parseDouble(guitar[1]), builder, guitar[3], type, wood, wood);
                 guitars.add(guitar1);
             }
         }
@@ -64,7 +96,36 @@ public class InventoryRepository {
             while(scanner.hasNextLine()){
                 String line = scanner.nextLine();
                 String[] guitar1 = line.split(",");
-                Guitar guitar2 = new Guitar(guitar1[0], Double.parseDouble(guitar1[1]), guitar1[2], guitar1[3], guitar1[4], guitar1[5], guitar1[6]);
+                Guitar guitar2 =null;
+                Builder builder = switch (guitar1[2]) {
+                    case "Fender" -> Builder.FENDER;
+                    case "Martin" -> Builder.MARTIN;
+                    case "Gibson" -> Builder.GIBSON;
+                    case "Collings" -> Builder.COLLINGS;
+                    case "Olson" -> Builder.OLSON;
+                    case "Ryan" -> Builder.RYAN;
+                    case "PRS" -> Builder.PRS;
+                    default -> Builder.ANY;
+                };
+                Type type = switch (guitar1[4]) {
+                    case "Acoustic" -> Type.ACOUSTIC;
+                    case "Electric" -> Type.ELECTRIC;
+
+                    default -> Type.ACOUSTIC;
+                };
+                Wood wood = switch (guitar1[5]) {
+                    case "Indian Rosewood" -> Wood.INDIAN_ROSEWOOD;
+                    case "Brazilian Rosewood" -> Wood.BRAZILIAN_ROSEWOOD;
+                    case "Mahogany" -> Wood.MAHOGANY;
+                    case "Cocobolo" -> Wood.COCOBOLO;
+                    case "Cedar" -> Wood.CEDAR;
+                    case "Adirondack" -> Wood.ADIRONDACK;
+                    case "Alder" -> Wood.ALDER;
+                    case "Sitka" -> Wood.SITKA;
+
+                    default -> Wood.MAPLE;
+                };
+                guitar2 = new Guitar(guitar1[0], Double.parseDouble(guitar1[1]), builder, guitar1[3], type, wood, wood);
                 guitars.add(guitar2);
             }
         }
