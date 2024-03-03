@@ -1,21 +1,23 @@
 package edu.iu.bolabanj.c322spring2024homework2.controllers;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
 import edu.iu.bolabanj.c322spring2024homework2.enums.Builder;
 import edu.iu.bolabanj.c322spring2024homework2.enums.Type;
 import edu.iu.bolabanj.c322spring2024homework2.enums.Wood;
 import edu.iu.bolabanj.c322spring2024homework2.model.Guitar;
-import edu.iu.bolabanj.c322spring2024homework2.respository.InventoryRepository;
+import edu.iu.bolabanj.c322spring2024homework2.repository.InventoryRepository;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+@CrossOrigin
 @RestController
 @RequestMapping("/inventory")
 public class InventoryController {
-    private InventoryRepository inventoryRepository;
+    private InventoryRepository inventoryRepository = new InventoryRepository();
     @GetMapping("/search")
-    public List<Guitar> search(@RequestParam String serialNumber,@RequestParam double price,@RequestParam Builder builder,@RequestParam String model,@RequestParam Type type,@RequestParam Wood backWood,@RequestParam Wood topWood) throws Exception{
+    public List<Guitar> search(@RequestParam Builder builder,@RequestParam String model,@RequestParam Type type,@RequestParam Wood backWood,@RequestParam Wood topWood) throws Exception{
         try{
-            Guitar searchGuitar = new Guitar(serialNumber, price, builder, model, type, backWood, topWood);
+            Guitar searchGuitar = new Guitar("00", 0, builder, model, type, backWood, topWood);
             return inventoryRepository.search(searchGuitar);
         }
         catch(Exception e){
@@ -26,13 +28,14 @@ public class InventoryController {
     }
 
     @PostMapping("/add")
-    public void add(@RequestBody String serialNumber,@RequestBody double price,@RequestBody  Builder builder,@RequestBody String model,@RequestBody Type type,@RequestBody Wood backWood,@RequestBody Wood topWood){
+    public boolean add(@RequestBody Guitar guitar){
         try{
-            Guitar newGuitar = new Guitar(serialNumber, price, builder, model, type, backWood, topWood);
+            Guitar newGuitar = new Guitar(guitar.getSerialNumber(), guitar.getPrice(), guitar.getBuilder(), guitar.getModel(), guitar.getType(), guitar.getBackWood(), guitar.getTopWood());
             inventoryRepository.addGuitar(newGuitar);
+            return true;
         }
         catch(Exception e){
-            return;
+            return false;
         }
 
     }

@@ -1,1 +1,1 @@
-456,1000.0,Fender,Stratocaster,electric,maple,maple
+01,1000.0,Fender,MODEL,Electric,Maple,Maple
