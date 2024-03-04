@@ -1,1 +1,1 @@
-01,1000.0,Fender,MODEL,Electric,Maple,Maple
+01,1000.0,Fender,model,Electric,Maple,Maple

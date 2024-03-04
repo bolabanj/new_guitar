@@ -11,15 +11,11 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @CrossOrigin
-
 @RestController
 @RequestMapping("/inventory")
 public class InventoryController {
     private InventoryRepository inventoryRepository = new InventoryRepository();
     @GetMapping("/search")
-
-
-
     public List<Guitar> search(@RequestParam Builder builder,@RequestParam String model,@RequestParam Type type,@RequestParam Wood backWood,@RequestParam Wood topWood) throws Exception{
 
         try{

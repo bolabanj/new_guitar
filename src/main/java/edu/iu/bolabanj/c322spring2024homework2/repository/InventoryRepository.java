@@ -4,6 +4,8 @@ import edu.iu.bolabanj.c322spring2024homework2.enums.Builder;
 import edu.iu.bolabanj.c322spring2024homework2.enums.Type;
 import edu.iu.bolabanj.c322spring2024homework2.enums.Wood;
 import edu.iu.bolabanj.c322spring2024homework2.model.Guitar;
+import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 import java.io.File;
 import java.io.IOException;
@@ -14,7 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-
+@Component
 public class InventoryRepository {
     public final String  DATABASE_NAME = "guitars.txt";
     public void addGuitar(Guitar guitar) throws IOException{
