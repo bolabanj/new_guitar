@@ -1,4 +1,4 @@
-package edu.iu.habahram.ducksservice.model;
+package edu.iu.bolabanj.c322spring2024homework2.model;
 
 public record Customer(String username,
                        String password,

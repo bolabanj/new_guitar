@@ -1,4 +1,4 @@
-package edu.iu.habahram.ducksservice.security;
+package edu.iu.bolabanj.c322spring2024homework2.security;
 
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;

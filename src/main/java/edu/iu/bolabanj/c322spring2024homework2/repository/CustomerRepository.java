@@ -1,7 +1,8 @@
-package edu.iu.habahram.ducksservice.repository;
-import edu.iu.habahram.ducksservice.model.Customer;
-import org.springframework.context.annotation.Bean;
-import org.springframework.security.crypto.bcrypt.BCrypt;
+package edu.iu.bolabanj.c322spring2024homework2.repository;
+
+import edu.iu.bolabanj.c322spring2024homework2.model.Customer;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
 
@@ -14,8 +15,6 @@ import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
 import java.util.List;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 @Component
 public class CustomerRepository {
@@ -32,7 +31,7 @@ public class CustomerRepository {
     }
 
     private static final String NEW_LINE = System.lineSeparator();
-    private static final String DATABASE_NAME = "ducks/customers.txt";
+    private static final String DATABASE_NAME = "guitar/customers.txt";
     private static void appendToFile(Path path, String content)
             throws IOException {
         Files.write(path,

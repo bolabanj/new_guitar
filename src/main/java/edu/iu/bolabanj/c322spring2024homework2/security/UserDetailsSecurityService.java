@@ -1,7 +1,7 @@
-package edu.iu.habahram.ducksservice.security;
+package edu.iu.bolabanj.c322spring2024homework2.security;
 
-import edu.iu.habahram.ducksservice.model.Customer;
-import edu.iu.habahram.ducksservice.repository.CustomerRepository;
+import edu.iu.bolabanj.c322spring2024homework2.model.Customer;
+import edu.iu.bolabanj.c322spring2024homework2.repository.CustomerRepository;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

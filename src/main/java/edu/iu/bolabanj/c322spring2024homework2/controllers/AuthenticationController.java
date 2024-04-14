@@ -1,12 +1,15 @@
-package edu.iu.habahram.ducksservice.controllers;
+package edu.iu.bolabanj.c322spring2024homework2.controllers;
 
-import edu.iu.habahram.ducksservice.model.Customer;
-import edu.iu.habahram.ducksservice.repository.CustomerRepository;
-import edu.iu.habahram.ducksservice.security.TokenService;
+import edu.iu.bolabanj.c322spring2024homework2.model.Customer;
+import edu.iu.bolabanj.c322spring2024homework2.repository.CustomerRepository;
+import edu.iu.bolabanj.c322spring2024homework2.security.TokenService;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @CrossOrigin
