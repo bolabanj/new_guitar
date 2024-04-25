@@ -4,3 +4,4 @@ sample,$2a$10$dKh1zx5dIiNzusRH4tawFezH4duTBLcTrv3EJZdz6feVXe.M35J0G,Another@mail
 john,$2a$10$RZgZyrPnD/Bnua/oECOh2OKtv/myP5qPgqBZV1XLaY17qgg/MQF5O,john@email.com
 dolapoopoo,$2a$10$bH3wBeKDvaEje9IGMw9/SOCcD99ZxMV02w2ZYU8awN00MySJyEf1e,newemail@johnathan.com
 dolapopz,$2a$10$iNgRJnwjOo3WLv6mPkw/Buu0fb6pYHxPlmsNN3OyiF43.gGW6k3I.,yetanotheremail@gmail.com
+another_user,$2a$10$FEVaCU97g62RP3P44Mu4uevSXPV5FFvx/qSrMabGri9NL.uHDOlz6,john@email.com
